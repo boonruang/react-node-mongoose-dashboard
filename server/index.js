@@ -13,7 +13,10 @@ import salesRoutes from './routes/sales.js'
 
 // Data imports
 import User from './models/User.js'
-import { dataUser } from './data/index.js'
+import Product from './models/Product.js'
+import ProductStat from './models/ProductStat.js'
+import Transaction from './models/Transaction.js'
+import { dataUser,dataProduct,dataProductStat,dataTransaction } from './data/index.js'
 
 // CONFIGURATION
 
@@ -44,6 +47,9 @@ mongoose.connect(process.env.MONGO_URL, {
 
     // ONLY ADD DATA ONE TIME
     // User.insertMany(dataUser)
+    // Product.insertMany(dataProduct)
+    // ProductStat.insertMany(dataProductStat)
+    // Transaction.insertMany(dataTransaction)
 }).catch((error) => console.log(`${error} did not connect`))
 
 mongoose.set('strictQuery', true)
