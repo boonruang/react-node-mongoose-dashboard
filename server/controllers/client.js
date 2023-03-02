@@ -2,7 +2,6 @@ import Product from '../models/Product.js'
 import ProductStat from '../models/ProductStat.js'
 import User from '../models/User.js'
 import Transaction from '../models/Transaction.js'
-import getCountryIso3 from 'country-iso-2-to-3'
 import countryIso2To3 from 'country-iso-2-to-3'
 
 export const getProducts = async (req, res) => {
@@ -38,12 +37,12 @@ export const getCustomers = async (req,res) => {
 export const getTransactions = async (req,res) => {
     try {
         // sort should look like this: { 'field': 'userId': 'sort': 'desc'}
-        const { page = 1, pageSize = 20, sort = null, search = ''} = req.query
+        const { page = 1, pageSize = 10, sort = null, search = ''} = req.query
         // formatted sort should look like { userId: -1 }
         const generatSort = () => {
             const sortParsed = JSON.parse(sort);
             const sortFormatted = {
-                [sortParsed.filed] : sortParsed.sort = 'asc' ? 1 : -1
+                [sortParsed.field] : (sortParsed.sort = 'asc' ? 1 : -1)
             }
 
             return sortFormatted
@@ -95,3 +94,4 @@ export const getGeography = async (req, res) => {
         res.status(404).json({ message: error.message})
     }
 }
+

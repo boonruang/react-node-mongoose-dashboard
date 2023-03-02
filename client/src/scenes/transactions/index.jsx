@@ -9,7 +9,7 @@ const Transactions = () => {
   const theme = useTheme();
 
   const [page, setPage] = useState(0);
-  const [pageSize, setPageSize] = useState(20);
+  const [pageSize, setPageSize] = useState(10);
   const [sort, setSort] = useState({});
   const [search, setSearch] = useState('');
 
