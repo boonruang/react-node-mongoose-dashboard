@@ -5,7 +5,8 @@
 npm init -y
 npm i express body-parser cors dotenv morgan mongoose nodemon
 
-## client 
+## client
+
 npx create-react-app client
 npm i react-redux @reduxjs/toolkit react-datepicker react-router-dom@6 @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid @nivo/core @nivo/bar @nivo/geo @nivo/pie
 
@@ -15,8 +16,4 @@ tailwind shader
 
 crtl + k , ctl + g
 
-
-
-
-
-
+npm i country-iso-2-to-3
